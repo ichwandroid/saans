@@ -1,0 +1,2163 @@
+:root {
+    --paper: #fff4ea;
+    --ink: #1d1030;
+    --sun: #ff8a2e;
+    --amber: #ffb12e;
+    --flare: #ff3d1f;
+    --rose: #f2476a;
+    --orchid: #f36cf0;
+    --sky: #2e62f6;
+    --deep: #0d4658;
+    --navy: #2a2b85;
+    --moss: #3a8420;
+    --butter: #ffe98c;
+    --lilac: #cda2f2;
+    --glow: #ffffff;
+    --f-display: "Hubot Sans", system-ui, sans-serif;
+    --f-text: "Google Sans", system-ui, sans-serif;
+    --k-mark: 0.66;
+    --gut: clamp(16px, 4vw, 56px);
+    --max: 1400px;
+    --r-xl: clamp(30px, 6vw, 96px);
+    --r-lg: clamp(22px, 3.2vw, 50px);
+    --r-md: clamp(14px, 1.6vw, 24px);
+    --hd: 76px;
+}
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+html {
+    -webkit-text-size-adjust: 100%;
+}
+body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--f-text);
+    font-size: clamp(16px, 1.15vw, 18px);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+img {
+    display: block;
+    max-width: 100%;
+}
+a {
+    color: inherit;
+}
+p,
+figure,
+blockquote {
+    margin: 0;
+}
+h1,
+h2,
+h3 {
+    margin: 0;
+    overflow-wrap: break-word;
+    font-family: var(--f-display);
+    font-weight: 850;
+    font-stretch: 112%;
+    letter-spacing: -0.028em;
+    line-height: 0.96;
+    text-wrap: balance;
+}
+main > * {
+    position: relative;
+    overflow-x: clip;
+}
+.wrap {
+    width: min(100% - 2 * var(--gut), var(--max));
+    margin-inline: auto;
+}
+.h2 {
+    font-size: clamp(40px, 6vw, 98px);
+}
+.sec {
+    padding-block: clamp(88px, 11vw, 170px);
+}
+.sec-head {
+    display: grid;
+    grid-template-columns: minmax(0, 1.55fr) minmax(0, 1fr);
+    gap: clamp(20px, 4vw, 64px);
+    align-items: end;
+    margin-bottom: clamp(40px, 6vw, 88px);
+}
+.sec-side {
+    display: grid;
+    gap: 18px;
+    justify-items: start;
+    max-width: 44ch;
+    font-size: clamp(16px, 1.25vw, 19px);
+}
+.vh {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    white-space: nowrap;
+}
+@media (max-width: 760px) {
+    .sec-head {
+        grid-template-columns: 1fr;
+    }
+}
+.tone-sun {
+    --t1: var(--amber);
+    --t2: color-mix(in oklab, var(--sun) 60%, var(--flare));
+    --tf: var(--ink);
+}
+.tone-sky,
+.tone-moss {
+    --hl: 84%;
+}
+.tone-sky {
+    --t1: var(--sky);
+    --t2: color-mix(in oklab, var(--sky) 55%, var(--navy));
+    --tf: var(--glow);
+}
+.tone-rose {
+    --t1: color-mix(in oklab, var(--rose) 80%, var(--sun));
+    --t2: color-mix(in oklab, var(--rose) 75%, var(--orchid));
+    --tf: var(--ink);
+}
+.tone-butter {
+    --t1: var(--butter);
+    --t2: color-mix(in oklab, var(--butter) 45%, var(--sun));
+    --tf: var(--ink);
+}
+.tone-lilac {
+    --t1: var(--lilac);
+    --t2: color-mix(in oklab, var(--lilac) 65%, var(--sky));
+    --tf: var(--ink);
+}
+.tone-moss {
+    --t1: var(--moss);
+    --t2: color-mix(in oklab, var(--moss) 55%, var(--deep));
+    --tf: var(--glow);
+}
+.glass {
+    color: var(--tf);
+    background:
+        radial-gradient(
+            90% 70% at 18% 0% in srgb,
+            color-mix(in oklab, var(--t1) var(--hl, 45%), var(--glow)) 0%,
+            transparent 58%
+        ),
+        radial-gradient(
+            60% 60% at 100% 100% in srgb,
+            color-mix(in oklab, var(--glow) 38%, transparent) 0%,
+            transparent 70%
+        ),
+        linear-gradient(165deg in srgb, var(--t1) 12%, var(--t2) 100%);
+    box-shadow:
+        inset 0 0 0 1.5px color-mix(in oklab, var(--glow) 34%, transparent),
+        inset 0 2px 0 color-mix(in oklab, var(--glow) 60%, transparent);
+}
+.btn {
+    --b-bg: var(--ink);
+    --b-fg: var(--paper);
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.6em;
+    white-space: nowrap;
+    padding: 1em 1.55em;
+    border: 0;
+    border-radius: 999px;
+    background: var(--b-bg);
+    color: var(--b-fg);
+    font: 600 16px/1 var(--f-text);
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.45s;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -60% -30%;
+    background: radial-gradient(
+        closest-side in srgb,
+        var(--glow) 0%,
+        color-mix(in oklab, var(--butter) 85%, transparent) 55%,
+        transparent 100%
+    );
+    transform: translateX(-100%) scale(0.5);
+    transition: transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.btn-light {
+    --b-bg: var(--paper);
+    --b-fg: var(--ink);
+}
+.btn-sm {
+    padding: 0.85em 1.3em;
+    font-size: 15px;
+}
+@media (hover: hover) {
+    .btn:hover {
+        color: var(--ink);
+    }
+    .btn:hover::before {
+        transform: translateX(0) scale(1.25);
+    }
+}
+.link {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+    font-weight: 600;
+    text-decoration: none;
+    padding-bottom: 4px;
+    background: linear-gradient(in srgb, currentColor, currentColor) 0 100% /
+        100% 1.5px no-repeat;
+}
+.link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 3px;
+    border-radius: 3px;
+    background: linear-gradient(
+        90deg in srgb,
+        var(--sun),
+        var(--butter) 60%,
+        var(--glow)
+    );
+    box-shadow: 0 0 12px 2px color-mix(in oklab, var(--butter) 80%, transparent);
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    transition: transform 0.55s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+@media (hover: hover) {
+    .link:hover::after {
+        transform: scaleX(1);
+    }
+}
+.ibtn {
+    position: relative;
+    display: inline-grid;
+    place-items: center;
+    flex: none;
+    width: 46px;
+    height: 46px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: var(--ink);
+    color: var(--paper);
+    cursor: pointer;
+}
+.ibtn svg {
+    width: 20px;
+    height: 20px;
+}
+.ibtn::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 1.5px solid var(--sun);
+    opacity: 0;
+    pointer-events: none;
+}
+@media (hover: hover) {
+    .ibtn:hover::after {
+        animation: ripple 1s ease-out infinite;
+    }
+}
+@keyframes ripple {
+    from {
+        opacity: 0.9;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.75);
+    }
+}
+.site-header {
+    position: fixed;
+    z-index: 50;
+    top: 12px;
+    left: var(--gut);
+    right: var(--gut);
+    pointer-events: none;
+}
+.hd-pill {
+    pointer-events: auto;
+    display: flex;
+    align-items: center;
+    gap: clamp(12px, 2vw, 28px);
+    max-width: var(--max);
+    min-height: 56px;
+    margin-inline: auto;
+    padding: 4px 4px 4px 21px;
+    border: 1px solid color-mix(in oklab, var(--glow) 80%, transparent);
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--paper) 92%, transparent);
+    box-shadow: 0 8px 18px -12px
+        color-mix(in oklab, var(--ink) 50%, transparent);
+}
+.brand {
+    display: inline-flex;
+    align-items: center;
+    font-family: var(--f-display);
+    font-weight: 900;
+    font-stretch: 125%;
+    font-size: 20px;
+    letter-spacing: -0.035em;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.brand-logo {
+    display: block;
+    height: clamp(26px, 3.5vw, 32px);
+    width: 60%;
+    object-fit: contain;
+}
+.hd-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 4px 26px;
+    margin-inline: auto;
+    font-size: 15px;
+}
+.hd-nav .link {
+    font-weight: 500;
+}
+.menu-btn {
+    display: none;
+    margin-left: auto;
+}
+.menu-btn .l2 {
+    transition: transform 0.35s;
+}
+.menu-btn .l1 {
+    transition: transform 0.35s;
+}
+.menu-btn[aria-expanded="true"] .l1 {
+    transform: translateY(3px) rotate(45deg);
+    transform-origin: 12px 9px;
+}
+.menu-btn[aria-expanded="true"] .l2 {
+    transform: translateY(-3px) rotate(-45deg);
+    transform-origin: 12px 15px;
+}
+.menu {
+    pointer-events: auto;
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    display: grid;
+    align-content: center;
+    gap: 40px;
+    padding: 110px var(--gut) 40px;
+    background:
+        radial-gradient(
+            60% 50% at 100% 0% in srgb,
+            color-mix(in oklab, var(--rose) 70%, transparent),
+            transparent 70%
+        ),
+        radial-gradient(
+            70% 50% at 0% 100% in srgb,
+            var(--amber),
+            transparent 70%
+        ),
+        var(--sun);
+}
+.menu[hidden] {
+    display: none;
+}
+.menu nav {
+    display: grid;
+    gap: 6px;
+    justify-items: start;
+}
+.menu nav a {
+    font-family: var(--f-display);
+    font-weight: 850;
+    font-stretch: 118%;
+    font-size: clamp(40px, 11vw, 76px);
+    letter-spacing: -0.035em;
+    line-height: 1.02;
+    text-decoration: none;
+    white-space: nowrap;
+}
+@media (max-width: 900px) {
+    .hd-nav,
+    .hd-cta {
+        display: none;
+    }
+    .menu-btn {
+        display: inline-grid;
+    }
+}
+.hero {
+    background: #06281d;
+}
+.hero-stage {
+    position: relative;
+    height: 100svh;
+    min-height: 560px;
+    overflow: hidden;
+    isolation: isolate;
+    color: var(--glow);
+    background:
+        radial-gradient(
+            45% 55% at 0% 58% in srgb,
+            #ffd56b 0%,
+            color-mix(in oklab, #e6a219 70%, transparent) 40%,
+            transparent 100%
+        ),
+        radial-gradient(
+            38% 44% at 60% 54% in srgb,
+            #ffc53d 0%,
+            color-mix(in oklab, #ff9f1a 65%, transparent) 45%,
+            transparent 100%
+        ),
+        linear-gradient(
+            180deg in srgb,
+            #06281d 0%,
+            #0a402f 42%,
+            color-mix(in oklab, #135d46 80%, #d4941e) 100%
+        );
+}
+.motion .hero {
+    height: 230vh;
+}
+.motion .hero-stage {
+    position: sticky;
+    top: 0;
+}
+.hero-art {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+}
+.sh {
+    position: absolute;
+    display: block;
+    background-origin: border-box;
+}
+.sh-w,
+.sh-s2,
+.sh-m {
+    will-change: opacity;
+}
+.sh-a {
+    left: 3%;
+    top: -10%;
+    width: 38%;
+    height: 52%;
+    border-radius: var(--r-xl);
+    z-index: 2;
+    overflow: hidden;
+    background: #06281d;
+    border: 1.5px solid color-mix(in oklab, var(--glow) 30%, transparent);
+}
+.sh-a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.sh-a::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        165deg,
+        rgba(6, 40, 29, 0.18) 0%,
+        rgba(255, 177, 46, 0.15) 60%,
+        rgba(29, 16, 48, 0.35) 100%
+    );
+    pointer-events: none;
+}
+.sh-o {
+    left: 20%;
+    top: -12%;
+    width: 36%;
+    height: 20%;
+    border-radius: var(--r-lg);
+    z-index: 3;
+    background:
+        linear-gradient(
+            0deg in srgb,
+            color-mix(in oklab, var(--butter) 55%, transparent) 0%,
+            transparent 38%
+        ),
+        linear-gradient(
+            180deg in srgb,
+            var(--flare) 0%,
+            color-mix(in oklab, var(--flare) 55%, var(--sun)) 100%
+        );
+}
+.sh-s1 {
+    left: calc(50% - 6.5%);
+    top: calc(75% - 3.2%);
+    width: 13%;
+    height: 6.4%;
+    border-radius: clamp(8px, 1vw, 16px);
+    z-index: 3;
+    background: var(--glow);
+}
+.sh-s1::before,
+.sh-s2::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: -190% -55%;
+    border-radius: 50%;
+    background: radial-gradient(
+        closest-side in srgb,
+        var(--glow) 0%,
+        color-mix(in oklab, var(--glow) 85%, transparent) 24%,
+        color-mix(in oklab, var(--butter) 55%, transparent) 50%,
+        transparent 100%
+    );
+}
+.sh-s2::before {
+    inset: -110% -170%;
+}
+.flood {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 36vmax;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    pointer-events: none;
+    background: radial-gradient(
+        closest-side in srgb,
+        var(--glow) 0%,
+        var(--glow) 54%,
+        color-mix(in oklab, var(--glow) 70%, transparent) 70%,
+        color-mix(in oklab, var(--butter) 40%, transparent) 84%,
+        transparent 100%
+    );
+}
+.sh-s2 {
+    left: -1%;
+    top: 27%;
+    width: 5%;
+    height: 8%;
+    border-radius: 0 14px 14px 0;
+    z-index: 3;
+    background: var(--glow);
+}
+.sh-b {
+    --rs: clamp(22px, 2.6vw, 38px);
+    left: 5%;
+    top: 46%;
+    width: 57%;
+    height: 84%;
+    border-radius: var(--r-xl) var(--r-xl) 0 0;
+    z-index: 1;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            180deg in srgb,
+            color-mix(in oklab, var(--glow) 40%, transparent) 0,
+            transparent 70px
+        ),
+        repeating-radial-gradient(
+            circle at 100% 0% in srgb,
+            transparent 0,
+            color-mix(in oklab, var(--glow) 34%, transparent)
+                calc(var(--rs) * 0.35),
+            transparent calc(var(--rs) * 0.62),
+            color-mix(in oklab, var(--ink) 16%, transparent)
+                calc(var(--rs) * 0.85),
+            transparent var(--rs)
+        ),
+        radial-gradient(
+            60% 50% at 92% 4% in srgb,
+            color-mix(in oklab, var(--flare) 70%, var(--glow)) 0%,
+            transparent 70%
+        ),
+        linear-gradient(
+            175deg in srgb,
+            var(--flare) 0%,
+            var(--rose) 55%,
+            color-mix(in oklab, var(--rose) 55%, var(--navy)) 100%
+        );
+    border: 1.5px solid color-mix(in oklab, var(--glow) 25%, transparent);
+}
+.sh-b img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.sh-b::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        180deg,
+        rgba(255, 138, 46, 0.15) 0%,
+        rgba(255, 177, 46, 0.2) 40%,
+        rgba(29, 16, 48, 0.45) 100%
+    );
+    pointer-events: none;
+}
+.sh-c {
+    left: 69%;
+    top: -14%;
+    width: 26%;
+    height: 80%;
+    border-radius: clamp(60px, 11vw, 170px);
+    z-index: 2;
+    overflow: hidden;
+    background: #06281d;
+    border: 1.5px solid color-mix(in oklab, var(--glow) 30%, transparent);
+}
+.sh-c img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+.sh-c::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        165deg,
+        rgba(6, 40, 29, 0.18) 0%,
+        rgba(255, 177, 46, 0.15) 60%,
+        rgba(29, 16, 48, 0.35) 100%
+    );
+    pointer-events: none;
+}
+.c-dot {
+    position: absolute;
+    left: 50%;
+    top: 58%;
+    width: 34%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(
+        circle at 38% 32% in srgb,
+        color-mix(in oklab, var(--rose) 55%, var(--glow)) 0%,
+        var(--rose) 45%,
+        color-mix(in oklab, var(--rose) 70%, var(--flare)) 88%,
+        color-mix(in oklab, var(--rose) 60%, var(--ink)) 100%
+    );
+}
+.sh-m {
+    left: 74%;
+    top: 3%;
+    width: 7vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: 3;
+    background: radial-gradient(
+        circle in srgb,
+        var(--orchid) 0%,
+        color-mix(in oklab, var(--orchid) 55%, transparent) 38%,
+        transparent 70%
+    );
+}
+.sh-w {
+    left: 64%;
+    top: 36%;
+    width: 30%;
+    height: 38%;
+    border-radius: 50%;
+    z-index: 1;
+    background: radial-gradient(
+        closest-side in srgb,
+        var(--glow) 0%,
+        color-mix(in oklab, var(--glow) 75%, transparent) 45%,
+        transparent 100%
+    );
+}
+.sh-d {
+    left: 71%;
+    top: 43%;
+    width: clamp(120px, 16vw, 260px);
+    aspect-ratio: 1;
+    z-index: 5;
+}
+.sh-d::before {
+    content: "";
+    position: absolute;
+    inset: -30%;
+    border-radius: 50%;
+    background: radial-gradient(
+        closest-side in srgb,
+        color-mix(in oklab, var(--glow) 60%, transparent) 52%,
+        transparent 100%
+    );
+}
+.orb {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background-origin: border-box;
+    background:
+        radial-gradient(
+            circle at 80% 84% in srgb,
+            color-mix(in oklab, var(--sun) 50%, transparent) 0%,
+            transparent 42%
+        ),
+        linear-gradient(
+            90deg in srgb,
+            color-mix(in oklab, var(--flare) 75%, transparent) 0%,
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 62% 36% in srgb,
+            color-mix(in oklab, var(--glow) 88%, transparent) 0%,
+            color-mix(in oklab, var(--butter) 80%, transparent) 34%,
+            color-mix(
+                    in oklab,
+                    var(--butter) 55%,
+                    color-mix(in oklab, var(--sun) 60%, transparent)
+                )
+                80%
+        );
+    border: 1.5px solid color-mix(in oklab, var(--glow) 60%, transparent);
+}
+.sh-e {
+    left: 74%;
+    top: 77%;
+    width: 30%;
+    height: 42%;
+    border-radius: var(--r-lg);
+    z-index: 2;
+    background:
+        linear-gradient(
+            180deg in srgb,
+            color-mix(in oklab, var(--glow) 55%, transparent) 0,
+            transparent 60px
+        ),
+        radial-gradient(
+            55% 60% at 28% 30% in srgb,
+            color-mix(in oklab, var(--sky) 45%, var(--glow)) 0%,
+            transparent 65%
+        ),
+        radial-gradient(
+            50% 60% at 85% 80% in srgb,
+            color-mix(in oklab, var(--navy) 80%, transparent) 0%,
+            transparent 70%
+        ),
+        linear-gradient(
+            150deg in srgb,
+            color-mix(in oklab, var(--sky) 60%, var(--glow)) 0%,
+            var(--sky) 45%,
+            color-mix(in oklab, var(--sky) 55%, var(--navy)) 100%
+        );
+    border: 1.5px solid color-mix(in oklab, var(--glow) 40%, transparent);
+}
+.sh-f {
+    left: -8%;
+    top: 73%;
+    width: 30vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: 3;
+    background:
+        radial-gradient(
+            circle at 70% 18% in srgb,
+            color-mix(in oklab, var(--lilac) 40%, var(--glow)) 0%,
+            transparent 45%
+        ),
+        linear-gradient(
+            170deg in srgb,
+            color-mix(in oklab, var(--lilac) 70%, var(--orchid)) 0%,
+            var(--lilac) 40%,
+            color-mix(in oklab, var(--lilac) 45%, var(--sky)) 100%
+        );
+    border: 1.5px solid color-mix(in oklab, var(--glow) 50%, transparent);
+}
+.sh-g {
+    left: 15%;
+    top: 88%;
+    width: 21vw;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: 2;
+    background: radial-gradient(
+        circle at 35% 25% in srgb,
+        color-mix(in oklab, var(--navy) 60%, var(--sky)) 0%,
+        var(--navy) 62%
+    );
+}
+.sh-r {
+    left: 2.2%;
+    top: 47%;
+    width: clamp(14px, 2.2vw, 30px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    z-index: 2;
+    background: radial-gradient(
+        circle at 40% 35% in srgb,
+        color-mix(in oklab, var(--rose) 55%, var(--glow)) 0%,
+        var(--rose) 60%
+    );
+}
+.hero-copy {
+    position: absolute;
+    z-index: 4;
+    left: var(--gut);
+    right: var(--gut);
+    top: 50%;
+    transform: translateY(-50%);
+    container-type: inline-size;
+    color: var(--glow);
+    text-align: center;
+}
+.wordmark {
+    font-size: min(calc(100cqi / (var(--len) * var(--k-mark))), 30svh);
+    font-weight: 900;
+    font-stretch: 125%;
+    letter-spacing: -0.04em;
+    line-height: 0.8;
+    white-space: nowrap;
+    /* color: var(--glow); */
+    color: rgb(29, 16, 48);
+    /* text-shadow: 0 2px 24px rgba(6, 40, 29, 0.45); */
+}
+.hero-title {
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: clamp(14px, 1.6vw, 22px);
+    letter-spacing: 0.01em;
+    color: rgb(29, 16, 48);
+    margin-top: 8px;
+    /* text-shadow: 0 1px 8px rgba(6, 40, 29, 0.6); */
+}
+.hero-plate {
+    position: absolute;
+    z-index: 6;
+    right: var(--gut);
+    bottom: clamp(18px, 4vh, 44px);
+    width: min(460px, 38vw);
+    display: grid;
+    gap: 14px;
+    justify-items: start;
+    padding: clamp(18px, 2vw, 28px);
+    border-radius: var(--r-lg);
+    background: rgba(6, 40, 29, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1.5px solid rgba(255, 213, 107, 0.35);
+    color: var(--glow);
+}
+.hero-dates {
+    font-family: var(--f-display);
+    font-weight: 850;
+    font-stretch: 118%;
+    font-size: clamp(28px, 2.8vw, 42px);
+    line-height: 1;
+    letter-spacing: -0.03em;
+    color: #ffd56b;
+}
+.hero-lead {
+    font-size: clamp(16px, 1.3vw, 19px);
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.88);
+}
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 14px 22px;
+}
+.hero-actions .link {
+    color: #ffd56b;
+}
+.hero-actions .link::after {
+    background: linear-gradient(90deg in srgb, #ffd56b, #ffffff 60%, transparent);
+}
+.hero-fade {
+    position: absolute;
+    inset: 0;
+    z-index: 3;
+    background: var(--paper);
+    opacity: 0;
+    pointer-events: none;
+}
+@media (max-width: 760px) {
+    :root {
+        --k-mark: 0.57;
+    }
+    .wordmark,
+    .site-footer .ft-mark {
+        font-stretch: 100%;
+    }
+    .sh-a {
+        left: -6%;
+        top: -5%;
+        width: 74%;
+        height: 36%;
+    }
+    .sh-o {
+        left: 30%;
+        top: -7%;
+        width: 46%;
+        height: 11%;
+    }
+    .sh-s1 {
+        left: calc(50% - 13%);
+        top: calc(75% - 2.1%);
+        width: 4.2%;
+        height: 4.2%;
+    }
+    .sh-s2 {
+        top: 21%;
+        height: 6%;
+        width: 8%;
+    }
+    .sh-b {
+        left: 4%;
+        top: 34.5%;
+        width: 80%;
+        height: 70%;
+    }
+    .sh-c {
+        left: 72%;
+        top: -6%;
+        width: 42%;
+        height: 60%;
+        border-radius: 22vw;
+    }
+    .sh-m {
+        left: 78%;
+        top: 4%;
+        width: 18vw;
+    }
+    .sh-w {
+        left: 58%;
+        top: 50%;
+        width: 54%;
+        height: 24%;
+    }
+    .sh-d {
+        left: 58%;
+        top: 50%;
+        width: 34vw;
+    }
+    .sh-e {
+        left: 52%;
+        top: 79%;
+        width: 60%;
+        height: 30%;
+    }
+    .sh-f {
+        left: -22%;
+        top: 77%;
+        width: 60vw;
+    }
+    .sh-g {
+        left: 22%;
+        top: 88%;
+        width: 40vw;
+    }
+    .sh-r {
+        left: 3%;
+        top: 44%;
+        width: 4vw;
+    }
+    .hero-copy {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .hero-plate {
+        left: var(--gut);
+        right: var(--gut);
+        width: auto;
+        bottom: 14px;
+    }
+}
+.intro {
+    background: var(--paper);
+    padding-block: clamp(48px, 7vw, 110px) clamp(88px, 11vw, 170px);
+}
+.statement {
+    max-width: 21ch;
+    font-size: clamp(30px, 4.4vw, 70px);
+    font-weight: 760;
+    font-stretch: 108%;
+    line-height: 1.04;
+    letter-spacing: -0.03em;
+    text-wrap: pretty;
+}
+.facts {
+    list-style: none;
+    margin: clamp(56px, 8vw, 120px) 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(10px, 1.6vw, 22px);
+    align-items: end;
+}
+.fact {
+    container-type: inline-size;
+    display: grid;
+    align-content: center;
+    justify-items: center;
+    gap: 8px;
+    padding: 12% 11%;
+    text-align: center;
+    aspect-ratio: 1;
+}
+.fact-pill {
+    aspect-ratio: 3/4;
+    border-radius: 999px;
+}
+.fact-circle {
+    border-radius: 50%;
+}
+.fact-squircle {
+    aspect-ratio: 1/1.12;
+    border-radius: 26%;
+}
+.fact-wide {
+    aspect-ratio: 1/0.86;
+    border-radius: 999px;
+}
+.fact-fig {
+    font-family: var(--f-display);
+    font-weight: 900;
+    font-stretch: 118%;
+    line-height: 0.88;
+    letter-spacing: -0.045em;
+    font-size: min(
+        clamp(48px, 8.4vw, 140px),
+        calc(80cqi / (var(--len) * 0.74))
+    );
+}
+.fact-label {
+    max-width: 15ch;
+    font-weight: 500;
+    font-size: clamp(14px, 1.1vw, 17px);
+    line-height: 1.3;
+}
+.facts .fact {
+    box-shadow:
+        inset 0 0 0 1.5px color-mix(in oklab, var(--glow) 40%, transparent),
+        inset 0 2px 0 color-mix(in oklab, var(--glow) 60%, transparent),
+        0 0 46px -6px color-mix(in oklab, var(--glow) 90%, transparent);
+}
+@media (min-width: 761px) {
+    .facts .fact {
+        margin-right: -2.6vw;
+    }
+}
+@media (max-width: 760px) {
+    .facts {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+.programme {
+    color: var(--paper);
+    background:
+        radial-gradient(
+            60% 40% at 92% 0% in srgb,
+            color-mix(in oklab, var(--sky) 45%, transparent),
+            transparent 70%
+        ),
+        linear-gradient(
+            180deg in srgb,
+            var(--deep),
+            color-mix(in oklab, var(--deep) 55%, var(--navy))
+        );
+}
+.stack {
+    position: relative;
+    display: grid;
+    gap: clamp(16px, 3vw, 32px);
+}
+.motion .stack {
+    gap: 16vh;
+}
+.work {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 0.95fr);
+    gap: clamp(20px, 3vw, 48px);
+    min-height: min(72vh, 680px);
+    padding: clamp(16px, 2.4vw, 36px);
+    border-radius: var(--r-xl);
+    transform-origin: 50% 0;
+}
+.motion .work {
+    position: sticky;
+    top: calc(var(--hd) + 6vh);
+}
+.work::before {
+    content: "";
+    position: absolute;
+    left: 6%;
+    right: 6%;
+    top: -34px;
+    height: 68px;
+    border-radius: 50%;
+    background: radial-gradient(
+        closest-side in srgb,
+        var(--glow) 0%,
+        var(--glow) 12%,
+        color-mix(in oklab, var(--glow) 70%, transparent) 26%,
+        color-mix(in oklab, var(--butter) 45%, transparent) 55%,
+        transparent 100%
+    );
+    opacity: var(--seam, 0);
+    pointer-events: none;
+}
+.work-body {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: clamp(6px, 1.4vw, 22px);
+}
+.work-title {
+    font-size: clamp(42px, 5.6vw, 94px);
+    font-weight: 900;
+    font-stretch: 122%;
+    line-height: 0.88;
+    letter-spacing: -0.04em;
+}
+.work-text {
+    max-width: 38ch;
+    font-size: clamp(16px, 1.25vw, 19px);
+}
+.work-meta {
+    margin-top: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+.work-meta span {
+    padding: 0.45em 0.9em;
+    border-radius: 999px;
+    font-weight: 600;
+    font-size: 14px;
+    white-space: nowrap;
+    background: color-mix(in oklab, var(--glow) 26%, transparent);
+    box-shadow: inset 0 0 0 1px
+        color-mix(in oklab, var(--glow) 45%, transparent);
+}
+.work-media {
+    position: relative;
+    min-height: 280px;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    background: color-mix(in oklab, var(--t2) 60%, var(--ink));
+    box-shadow: 0 0 0 1.5px color-mix(in oklab, var(--glow) 35%, transparent);
+}
+.work-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.work-veil {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--ink);
+    opacity: 0;
+    pointer-events: none;
+}
+@media (max-width: 760px) {
+    .work {
+        grid-template-columns: 1fr;
+        min-height: 0;
+        gap: 14px;
+    }
+    .motion .work {
+        top: calc(var(--hd) + 2vh);
+    }
+    .work-media {
+        order: -1;
+        min-height: 0;
+        aspect-ratio: 16/10;
+    }
+    .work-meta {
+        margin-top: 4px;
+    }
+}
+.place {
+    background: var(--paper);
+}
+.ripple {
+    position: relative;
+    padding-bottom: clamp(24px, 4vw, 56px);
+}
+.ripple-slab {
+    --rs: clamp(20px, 2.4vw, 34px);
+    position: relative;
+    height: min(84vh, 800px);
+    min-height: 420px;
+    border-radius: var(--r-xl);
+    overflow: hidden;
+    isolation: isolate;
+    background:
+        repeating-radial-gradient(
+            circle at 100% 0% in srgb,
+            transparent 0,
+            color-mix(in oklab, var(--glow) 34%, transparent)
+                calc(var(--rs) * 0.35),
+            transparent calc(var(--rs) * 0.62),
+            color-mix(in oklab, var(--ink) 16%, transparent)
+                calc(var(--rs) * 0.85),
+            transparent var(--rs)
+        ),
+        radial-gradient(
+            50% 50% at 100% 0% in srgb,
+            color-mix(in oklab, var(--butter) 80%, var(--glow)) 0%,
+            transparent 70%
+        ),
+        linear-gradient(
+            175deg in srgb,
+            var(--flare) 0%,
+            var(--rose) 55%,
+            color-mix(in oklab, var(--rose) 55%, var(--navy)) 100%
+        );
+    box-shadow: inset 0 0 0 1.5px
+        color-mix(in oklab, var(--glow) 30%, transparent);
+}
+.ripple-media {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    background: color-mix(in oklab, var(--navy) 70%, var(--ink));
+}
+.ripple-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.motion .ripple-media {
+    clip-path: circle(0px at 100% 0%);
+}
+.ripple-rings {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    color: var(--glow);
+}
+.ripple-plate {
+    position: absolute;
+    z-index: 3;
+    left: clamp(16px, 3vw, 48px);
+    bottom: 0;
+    margin: 0;
+    width: min(780px, 72%);
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px clamp(16px, 2.4vw, 36px);
+    padding: clamp(18px, 2.2vw, 30px) clamp(20px, 2.6vw, 36px);
+    border-radius: var(--r-lg);
+    box-shadow:
+        inset 0 0 0 1.5px color-mix(in oklab, var(--glow) 60%, transparent),
+        0 30px 70px -30px color-mix(in oklab, var(--ink) 55%, transparent);
+}
+.ripple-plate dt {
+    font-size: 15px;
+    color: color-mix(in oklab, var(--tf) 70%, transparent);
+}
+.ripple-plate dd {
+    margin: 4px 0 0;
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-stretch: 112%;
+    font-size: clamp(20px, 1.9vw, 28px);
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+}
+@media (max-width: 760px) {
+    .ripple {
+        padding-bottom: 0;
+    }
+    .ripple-slab {
+        height: 68svh;
+        min-height: 380px;
+    }
+    .ripple-plate {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        width: auto;
+        margin: -56px 12px 0;
+        grid-template-columns: 1fr;
+    }
+}
+.artists {
+    background: linear-gradient(
+        180deg in srgb,
+        var(--paper) 0%,
+        color-mix(in oklab, var(--lilac) 40%, var(--paper)) 100%
+    );
+}
+.people {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(40px, 5vw, 72px) clamp(16px, 3vw, 44px);
+}
+.person {
+    display: grid;
+    gap: 6px;
+    align-content: start;
+}
+.person-art {
+    position: relative;
+    margin-bottom: 14px;
+}
+.person-halo {
+    position: absolute;
+    inset: -9% -7%;
+    border-radius: 50%;
+    background: radial-gradient(
+        closest-side in srgb,
+        color-mix(in oklab, var(--t1) 90%, var(--glow)) 0%,
+        color-mix(in oklab, var(--t2) 70%, transparent) 48%,
+        transparent 100%
+    );
+    will-change: transform;
+}
+.person-frame {
+    position: relative;
+    aspect-ratio: 4/5;
+    overflow: hidden;
+    clip-path: inset(0% 0% 0% 0% round 26%);
+    background: color-mix(in oklab, var(--t2) 55%, var(--ink));
+}
+.person-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 26%;
+    box-shadow:
+        inset 0 0 0 1.5px color-mix(in oklab, var(--glow) 45%, transparent),
+        inset 0 -30px 50px -30px
+            color-mix(in oklab, var(--glow) 55%, transparent);
+    pointer-events: none;
+}
+.person-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.person-name {
+    font-size: clamp(24px, 2.3vw, 36px);
+    font-weight: 850;
+    font-stretch: 115%;
+}
+.person-role {
+    color: color-mix(in oklab, var(--ink) 70%, var(--paper));
+    font-size: clamp(15px, 1.1vw, 17px);
+}
+@media (max-width: 760px) {
+    .people {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 36px 14px;
+    }
+    .person-name {
+        font-size: 21px;
+    }
+}
+.night {
+    background:
+        radial-gradient(
+            50% 60% at 100% 10% in srgb,
+            color-mix(in oklab, var(--flare) 55%, transparent),
+            transparent 70%
+        ),
+        radial-gradient(
+            60% 50% at 0% 100% in srgb,
+            var(--amber),
+            transparent 70%
+        ),
+        var(--sun);
+}
+.night-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+    gap: clamp(40px, 6vw, 110px);
+    align-items: start;
+}
+.night-head {
+    position: sticky;
+    top: calc(var(--hd) + 6vh);
+    display: grid;
+    gap: 24px;
+    justify-items: start;
+}
+.night-head > p {
+    max-width: 36ch;
+    font-size: clamp(16px, 1.3vw, 20px);
+}
+.steps-line {
+    position: relative;
+    padding-left: clamp(44px, 5vw, 72px);
+}
+.steps-line::before {
+    content: "";
+    position: absolute;
+    left: clamp(14px, 1.6vw, 22px);
+    top: 18px;
+    bottom: 0;
+    width: 2px;
+    border-radius: 2px;
+    background: color-mix(in oklab, var(--ink) 22%, transparent);
+}
+.steps-fill {
+    position: absolute;
+    left: clamp(13px, 1.6vw, 21px);
+    top: 18px;
+    bottom: 0;
+    width: 4px;
+    border-radius: 4px;
+    background: var(--glow);
+    box-shadow:
+        0 0 14px 3px var(--glow),
+        0 0 40px 10px color-mix(in oklab, var(--butter) 70%, transparent);
+    transform-origin: 50% 0;
+}
+.steps {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: clamp(48px, 6vw, 88px);
+}
+.step {
+    position: relative;
+    container-type: inline-size;
+    display: grid;
+    gap: 10px;
+}
+.step::before {
+    content: "";
+    position: absolute;
+    left: calc(-1 * clamp(44px, 5vw, 72px) + clamp(14px, 1.6vw, 22px) - 10px);
+    top: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--sun);
+    box-shadow: inset 0 0 0 2px color-mix(in oklab, var(--ink) 35%, transparent);
+    transition:
+        background 0.5s,
+        box-shadow 0.5s;
+}
+.step.is-lit::before {
+    background: var(--glow);
+    box-shadow:
+        0 0 0 5px color-mix(in oklab, var(--glow) 40%, transparent),
+        0 0 30px 8px color-mix(in oklab, var(--butter) 85%, transparent);
+}
+.step-time {
+    font-family: var(--f-display);
+    font-weight: 900;
+    font-stretch: 120%;
+    letter-spacing: -0.04em;
+    line-height: 0.9;
+    font-size: min(
+        clamp(44px, 5.4vw, 84px),
+        calc(100cqi / (var(--len) * 0.66))
+    );
+}
+.step h3 {
+    font-size: clamp(24px, 2.2vw, 34px);
+    font-weight: 850;
+}
+.step > p:last-child {
+    max-width: 44ch;
+    font-size: clamp(16px, 1.2vw, 18px);
+}
+@media (max-width: 760px) {
+    .night-grid {
+        grid-template-columns: 1fr;
+    }
+    .night-head {
+        position: static;
+    }
+}
+.gallery {
+    background: linear-gradient(
+        180deg in srgb,
+        var(--paper),
+        color-mix(in oklab, var(--butter) 30%, var(--paper))
+    );
+}
+.gal-stage {
+    position: relative;
+    padding-block: clamp(88px, 11vw, 170px);
+}
+.gal-track {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    align-items: start;
+    gap: clamp(20px, 3vw, 44px);
+    padding-inline: var(--gut);
+}
+.gal-intro {
+    grid-column: 1 / -1;
+    display: grid;
+    gap: 22px;
+    align-content: center;
+    max-width: 560px;
+}
+.gal-intro p {
+    max-width: 40ch;
+    font-size: clamp(16px, 1.25vw, 19px);
+}
+.shot {
+    margin: 0;
+    display: grid;
+    gap: 14px;
+}
+.shot-frame {
+    position: relative;
+    overflow: hidden;
+    background: color-mix(in oklab, var(--navy) 70%, var(--ink));
+    box-shadow:
+        0 30px 70px -36px color-mix(in oklab, var(--flare) 80%, transparent),
+        inset 0 0 0 1.5px color-mix(in oklab, var(--glow) 35%, transparent);
+}
+.shot-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.shot figcaption {
+    font-size: 15px;
+    font-weight: 500;
+}
+.shot-pill .shot-frame {
+    aspect-ratio: 3/5;
+    border-radius: 999px;
+}
+.shot-wide .shot-frame {
+    aspect-ratio: 4/3;
+    border-radius: var(--r-lg);
+}
+.shot-circle .shot-frame {
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+.shot-squircle .shot-frame {
+    aspect-ratio: 4/5;
+    border-radius: 26%;
+}
+.gal-orb {
+    position: absolute;
+    z-index: 2;
+    border-radius: 50%;
+    pointer-events: none;
+    will-change: transform;
+}
+.gal-orb-a {
+    right: 12%;
+    top: 14%;
+    width: clamp(70px, 9vw, 140px);
+    aspect-ratio: 1;
+    background: radial-gradient(
+        circle at 62% 36% in srgb,
+        var(--glow) 0%,
+        var(--butter) 34%,
+        color-mix(in oklab, var(--butter) 55%, var(--sun)) 80%
+    );
+    box-shadow: 0 0 50px 6px color-mix(in oklab, var(--glow) 70%, transparent);
+}
+.gal-orb-b {
+    right: 34%;
+    bottom: 10%;
+    width: clamp(36px, 4vw, 64px);
+    aspect-ratio: 1;
+    background: radial-gradient(
+        circle at 40% 35% in srgb,
+        color-mix(in oklab, var(--rose) 55%, var(--glow)) 0%,
+        var(--rose) 60%
+    );
+}
+.motion .gal-stage {
+    position: sticky;
+    top: 0;
+    height: 100svh;
+    min-height: 520px;
+    padding-block: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+.motion .gal-track {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    gap: clamp(28px, 4vw, 72px);
+    will-change: transform;
+}
+.motion .gal-intro {
+    width: min(520px, 80vw);
+    flex: none;
+}
+.motion .shot {
+    flex: none;
+}
+.motion .shot-pill .shot-frame {
+    height: 60svh;
+}
+.motion .shot-wide {
+    align-self: flex-end;
+    margin-bottom: 9svh;
+}
+.motion .shot-wide .shot-frame {
+    height: 44svh;
+}
+.motion .shot-circle {
+    align-self: flex-start;
+    margin-top: 12svh;
+}
+.motion .shot-circle .shot-frame {
+    height: 42svh;
+}
+.motion .shot-squircle .shot-frame {
+    height: 52svh;
+}
+@media (max-width: 760px) {
+    .motion .shot-pill .shot-frame {
+        height: 50svh;
+    }
+    .motion .shot-wide .shot-frame {
+        height: 30svh;
+    }
+    .motion .shot-circle .shot-frame {
+        height: 34svh;
+    }
+    .motion .shot-squircle .shot-frame {
+        height: 44svh;
+    }
+}
+.voices {
+    color: var(--paper);
+    background:
+        radial-gradient(
+            55% 55% at 0% 100% in srgb,
+            color-mix(in oklab, var(--orchid) 35%, transparent),
+            transparent 70%
+        ),
+        radial-gradient(
+            50% 50% at 100% 0% in srgb,
+            color-mix(in oklab, var(--sky) 55%, transparent),
+            transparent 70%
+        ),
+        color-mix(in oklab, var(--navy) 55%, var(--deep));
+}
+.v-row {
+    padding-inline: var(--gut);
+}
+.v-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: clamp(14px, 2vw, 24px);
+}
+.voice {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    padding: clamp(22px, 2.4vw, 34px);
+    border-radius: var(--r-lg);
+}
+.voice blockquote p {
+    font-family: var(--f-display);
+    font-weight: 650;
+    font-stretch: 104%;
+    font-size: clamp(21px, 1.8vw, 27px);
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+}
+.voice-by {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 15px;
+}
+.voice-by span {
+    display: grid;
+}
+.voice-orb {
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(
+        circle at 35% 30% in srgb,
+        var(--glow) 0%,
+        color-mix(in oklab, var(--t1) 60%, var(--glow)) 30%,
+        var(--t2) 100%
+    );
+    box-shadow:
+        0 0 0 2px color-mix(in oklab, var(--glow) 50%, transparent),
+        0 0 24px color-mix(in oklab, var(--glow) 45%, transparent);
+}
+.motion .v-row {
+    padding-inline: 0;
+    overflow: hidden;
+}
+.motion .v-list {
+    display: flex;
+    width: max-content;
+    gap: 0;
+}
+.motion .voice {
+    flex: none;
+    width: clamp(290px, 30vw, 440px);
+    margin-right: clamp(14px, 2vw, 24px);
+}
+.passes {
+    background:
+        radial-gradient(
+            55% 65% at 50% 100% in srgb,
+            color-mix(in oklab, var(--rose) 70%, transparent),
+            transparent 72%
+        ),
+        radial-gradient(
+            45% 50% at 0% 0% in srgb,
+            var(--amber),
+            transparent 70%
+        ),
+        linear-gradient(
+            180deg in srgb,
+            var(--sun),
+            color-mix(in oklab, var(--sun) 55%, var(--flare))
+        );
+}
+.pass-grid {
+    --gap: clamp(12px, 1.4vw, 18px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+    gap: var(--gap);
+    align-items: stretch;
+}
+.pass {
+    position: relative;
+    container-type: inline-size;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: clamp(24px, 2.6vw, 40px);
+    border-radius: var(--r-xl);
+}
+.pass + .pass::before {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: calc(var(--gap) / -2 - 30px);
+    top: 4%;
+    bottom: 4%;
+    width: 60px;
+    border-radius: 50%;
+    background: radial-gradient(
+        closest-side in srgb,
+        var(--glow) 0%,
+        var(--glow) 12%,
+        color-mix(in oklab, var(--glow) 70%, transparent) 26%,
+        color-mix(in oklab, var(--butter) 45%, transparent) 55%,
+        transparent 100%
+    );
+    opacity: var(--flare, 0);
+    pointer-events: none;
+}
+.pass-featured {
+    color: var(--ink);
+    background:
+        radial-gradient(
+            70% 45% at 50% 0% in srgb,
+            var(--glow) 0%,
+            color-mix(in oklab, var(--glow) 60%, transparent) 50%,
+            transparent 80%
+        ),
+        linear-gradient(
+            180deg in srgb,
+            color-mix(in oklab, var(--sun) 16%, var(--glow)) 0%,
+            color-mix(in oklab, var(--sun) 45%, var(--glow)) 100%
+        );
+    box-shadow:
+        inset 0 0 0 1.5px color-mix(in oklab, var(--glow) 80%, transparent),
+        0 0 50px -8px color-mix(in oklab, var(--glow) 75%, transparent);
+}
+.pass-name {
+    font-size: clamp(26px, 2.4vw, 36px);
+    font-weight: 850;
+}
+.pass-price {
+    margin-top: clamp(12px, 3vw, 48px);
+    font-family: var(--f-display);
+    font-weight: 900;
+    font-stretch: 122%;
+    line-height: 0.85;
+    letter-spacing: -0.05em;
+    font-size: min(clamp(64px, 8vw, 132px), calc(90cqi / (var(--len) * 0.84)));
+}
+.pass-note {
+    font-weight: 600;
+}
+.pass-list {
+    list-style: none;
+    margin: 8px 0 18px;
+    padding: 18px 0 0;
+    display: grid;
+    gap: 10px;
+    border-top: 1.5px solid color-mix(in oklab, currentColor 25%, transparent);
+}
+.pass-list li {
+    position: relative;
+    padding-left: 28px;
+}
+.pass-list li::before {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 0.28em;
+    width: 6px;
+    height: 11px;
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+.pass .btn {
+    margin-top: auto;
+    align-self: flex-start;
+}
+@media (max-width: 760px) {
+    .pass + .pass::before {
+        left: 6%;
+        right: 6%;
+        top: calc(var(--gap) / -2 - 30px);
+        bottom: auto;
+        width: auto;
+        height: 60px;
+    }
+}
+.faq {
+    background: var(--paper);
+}
+.faq-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.2fr);
+    gap: clamp(36px, 6vw, 110px);
+    align-items: start;
+}
+.faq-head {
+    display: grid;
+    gap: 24px;
+}
+.faq-head > p {
+    max-width: 36ch;
+    font-size: clamp(16px, 1.25vw, 19px);
+}
+.qa-list {
+    display: grid;
+    gap: 12px;
+}
+.qa {
+    --t1: var(--butter);
+    --t2: color-mix(in oklab, var(--butter) 50%, var(--sun));
+    border-radius: clamp(30px, 3.4vw, 44px);
+    background: color-mix(in oklab, var(--ink) 5%, var(--paper));
+    box-shadow: inset 0 0 0 1.5px
+        color-mix(in oklab, var(--ink) 8%, transparent);
+    transition:
+        background 0.5s,
+        border-radius 0.5s,
+        box-shadow 0.5s;
+}
+.qa.is-open {
+    border-radius: var(--r-md);
+    background:
+        radial-gradient(
+            90% 80% at 15% 0% in srgb,
+            color-mix(in oklab, var(--t1) 40%, var(--glow)) 0%,
+            transparent 60%
+        ),
+        linear-gradient(165deg in srgb, var(--t1), var(--t2));
+    box-shadow:
+        inset 0 0 0 1.5px color-mix(in oklab, var(--glow) 60%, transparent),
+        0 20px 60px -30px color-mix(in oklab, var(--sun) 90%, transparent);
+}
+.qa-q {
+    font: inherit;
+    letter-spacing: 0;
+}
+.qa-q button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+    width: 100%;
+    padding: clamp(18px, 1.8vw, 24px) clamp(18px, 1.8vw, 24px)
+        clamp(18px, 1.8vw, 24px) clamp(22px, 2.4vw, 34px);
+    border: 0;
+    background: none;
+    color: inherit;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--f-display);
+    font-weight: 750;
+    font-stretch: 108%;
+    font-size: clamp(18px, 1.6vw, 24px);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+}
+.qa-icon {
+    position: relative;
+    flex: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--ink);
+    transition: transform 0.5s cubic-bezier(0.3, 0.7, 0.2, 1);
+}
+.qa-icon::before,
+.qa-icon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 14px;
+    height: 2px;
+    margin: -1px 0 0 -7px;
+    border-radius: 2px;
+    background: var(--paper);
+}
+.qa-icon::after {
+    transform: rotate(90deg);
+}
+.qa.is-open .qa-icon {
+    transform: rotate(135deg);
+}
+.qa-a {
+    display: grid;
+    grid-template-rows: 0fr;
+    visibility: hidden;
+    transition:
+        grid-template-rows 0.55s cubic-bezier(0.3, 0.7, 0.2, 1),
+        visibility 0.55s;
+}
+.qa-a > div {
+    overflow: hidden;
+}
+.qa-a p {
+    max-width: 58ch;
+    padding: 0 clamp(22px, 2.4vw, 34px) clamp(20px, 2vw, 28px);
+}
+.qa.is-open .qa-a {
+    grid-template-rows: 1fr;
+    visibility: visible;
+}
+@media (hover: hover) {
+    .qa:not(.is-open):hover {
+        background: color-mix(in oklab, var(--butter) 45%, var(--paper));
+    }
+}
+@media (max-width: 760px) {
+    .faq-grid {
+        grid-template-columns: 1fr;
+    }
+}
+.visit {
+    color: var(--glow);
+    background:
+        radial-gradient(
+            50% 60% at 100% 100% in srgb,
+            color-mix(in oklab, var(--orchid) 45%, transparent),
+            transparent 70%
+        ),
+        radial-gradient(
+            45% 55% at 0% 0% in srgb,
+            color-mix(in oklab, var(--sky) 55%, var(--glow)),
+            transparent 70%
+        ),
+        linear-gradient(
+            170deg in srgb,
+            var(--sky),
+            color-mix(in oklab, var(--sky) 60%, var(--navy))
+        );
+}
+.visit-orb {
+    position: absolute;
+    right: 6%;
+    top: 8%;
+    width: clamp(120px, 18vw, 280px);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    pointer-events: none;
+    background:
+        linear-gradient(
+            90deg in srgb,
+            color-mix(in oklab, var(--flare) 70%, transparent) 0%,
+            transparent 42%
+        ),
+        radial-gradient(
+            circle at 62% 36% in srgb,
+            var(--glow) 0%,
+            var(--butter) 34%,
+            color-mix(in oklab, var(--butter) 55%, var(--sun)) 82%
+        );
+    box-shadow: 0 0 80px 10px color-mix(in oklab, var(--glow) 45%, transparent);
+    will-change: transform;
+}
+.visit-head .h2 {
+    max-width: 11ch;
+}
+@media (max-width: 760px) {
+    .visit-orb {
+        right: -5%;
+        top: 70px;
+        width: 26vw;
+    }
+}
+.visit-head {
+    position: relative;
+    display: grid;
+    gap: clamp(20px, 3vw, 40px);
+    margin-bottom: clamp(40px, 6vw, 90px);
+}
+.visit-mail {
+    justify-self: start;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    font-family: var(--f-display);
+    font-weight: 850;
+    font-stretch: 115%;
+    letter-spacing: -0.035em;
+    line-height: 1;
+    font-size: clamp(28px, 5.4vw, 88px);
+    text-decoration: none;
+    background: linear-gradient(in srgb, currentColor, currentColor) 0 100% /
+        100% 3px no-repeat;
+    padding-bottom: 0.08em;
+}
+@media (hover: hover) {
+    .visit-mail:hover {
+        background-image: linear-gradient(
+            90deg in srgb,
+            var(--butter),
+            var(--glow)
+        );
+    }
+}
+.visit-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+    gap: clamp(12px, 1.6vw, 20px);
+}
+.slab {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: clamp(24px, 2.6vw, 38px);
+    border-radius: var(--r-lg);
+}
+.slab h3 {
+    font-size: clamp(26px, 2.4vw, 36px);
+    font-weight: 850;
+    margin-bottom: 6px;
+}
+.slab .link {
+    margin-top: auto;
+    align-self: flex-start;
+}
+.site-footer {
+    position: relative;
+    overflow: hidden;
+    color: var(--paper);
+    padding-top: clamp(72px, 9vw, 140px);
+    background:
+        repeating-radial-gradient(
+            circle at 50% 125% in srgb,
+            transparent 0,
+            color-mix(in oklab, var(--glow) 9%, transparent) 14px,
+            transparent 28px,
+            color-mix(in oklab, var(--ink) 18%, transparent) 36px,
+            transparent 42px
+        ),
+        radial-gradient(
+            70% 62% at 50% 118% in srgb,
+            color-mix(in oklab, var(--sun) 85%, transparent) 0%,
+            color-mix(in oklab, var(--rose) 45%, transparent) 42%,
+            transparent 78%
+        ),
+        var(--deep);
+}
+.ft-top {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: end;
+    gap: 24px 48px;
+}
+.ft-note {
+    max-width: 42ch;
+    font-size: clamp(16px, 1.3vw, 19px);
+}
+.ft-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 28px;
+}
+.ft-mark-box {
+    container-type: inline-size;
+    margin-top: clamp(48px, 7vw, 110px);
+}
+.ft-mark {
+    font-family: var(--f-display);
+    font-weight: 900;
+    font-stretch: 125%;
+    letter-spacing: -0.04em;
+    line-height: 0.8;
+    white-space: nowrap;
+    text-align: center;
+    font-size: calc(100cqi / (var(--len) * var(--k-mark)));
+}
+.ft-legal {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 8px 24px;
+    padding: 26px 0 30px;
+    font-size: 14px;
+    color: color-mix(in oklab, var(--paper) 78%, transparent);
+}
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

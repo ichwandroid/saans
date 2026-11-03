@@ -1,0 +1,15 @@
+@extends('layouts.app')
+
+@section('content')
+  @include('sections.hero')
+  @include('sections.intro')
+  @include('sections.programme')
+  @include('sections.place')
+  @include('sections.artists')
+  @include('sections.night')
+  @include('sections.gallery')
+  @include('sections.voices')
+  @include('sections.passes')
+  @include('sections.faq')
+  @include('sections.visit')
+@endsection

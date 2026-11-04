@@ -1,0 +1,102 @@
+/* ============================================================
+   SAANS — Custom Glow Ring Cursor
+   ============================================================ */
+
+.saans-cursor {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99998;
+    pointer-events: none;
+    opacity: 1;
+    transition: opacity 0.25s ease;
+}
+
+@media (pointer: fine) {
+    .saans-cursor {
+        display: block;
+    }
+}
+
+/* Titik Tengah */
+.cursor-dot {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 7px;
+    height: 7px;
+    background: #135d46;
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.25s ease, height 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
+    box-shadow: 0 0 8px rgba(19, 93, 70, 0.4);
+    will-change: transform;
+}
+
+/* Cincin Luar (Smooth Lag / Spring) */
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    border: 1.5px solid rgba(19, 93, 70, 0.5);
+    background: rgba(19, 93, 70, 0.04);
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    transition: width 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                height 0.3s cubic-bezier(0.25, 1, 0.5, 1),
+                border-color 0.25s ease,
+                background-color 0.25s ease;
+    will-change: transform;
+}
+
+/* Ketika di atas area gelap (Hero hijau tua / Footer) */
+.saans-cursor.is-on-dark .cursor-dot {
+    background: #ffd56b;
+    box-shadow: 0 0 10px rgba(255, 213, 107, 0.7);
+}
+.saans-cursor.is-on-dark .cursor-ring {
+    border-color: rgba(255, 213, 107, 0.6);
+    background: rgba(255, 213, 107, 0.06);
+}
+
+/* Ketika Hover Elemen Interaktif (Button, Link, Card, Foto) */
+.saans-cursor.is-hovering .cursor-dot {
+    width: 4px;
+    height: 4px;
+    opacity: 0.6;
+}
+
+.saans-cursor.is-hovering .cursor-ring {
+    width: 52px;
+    height: 52px;
+    border-color: #135d46;
+    background: rgba(19, 93, 70, 0.12);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+}
+
+.saans-cursor.is-on-dark.is-hovering .cursor-ring {
+    border-color: #ffd56b;
+    background: rgba(255, 213, 107, 0.18);
+}
+
+/* Ketika Klik Mouse Down */
+.saans-cursor.is-active .cursor-ring {
+    width: 26px;
+    height: 26px;
+    background: rgba(19, 93, 70, 0.25);
+}
+.saans-cursor.is-on-dark.is-active .cursor-ring {
+    background: rgba(255, 213, 107, 0.3);
+}
+
+/* Ketika Mouse Keluar Jendela */
+.saans-cursor.is-hidden {
+    opacity: 0;
+}
+

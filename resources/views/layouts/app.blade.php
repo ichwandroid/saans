@@ -12,8 +12,16 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&family=Hubot+Sans:wdth,wght@75..125,200..900&display=swap">
 <link rel="stylesheet" href="{{ asset('css/glowtide.css') }}">
 <link rel="stylesheet" href="{{ asset('css/opener.css') }}">
+<link rel="stylesheet" href="{{ asset('css/cursor.css') }}">
 </head>
 <body>
+
+{{-- ===== CUSTOM CURSOR ===== --}}
+<div class="saans-cursor" aria-hidden="true">
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+</div>
+{{-- ========================= --}}
 
 {{-- ===== PAGE OPENER ===== --}}
 <div id="saans-opener" aria-hidden="true">
@@ -41,5 +49,6 @@
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
 <script src="{{ asset('js/glowtide.js') }}"></script>
 <script src="{{ asset('js/opener.js') }}"></script>
+<script src="{{ asset('js/cursor.js') }}"></script>
 </body>
 </html>

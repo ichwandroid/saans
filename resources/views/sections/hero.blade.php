@@ -3,7 +3,7 @@
     <div class="hero-art" aria-hidden="true">
       <i class="sh sh-b" style="--depth:.7"><img src="{{ asset('images/hero2.jpg') }}" alt="Siswa SAANS"></i>
       <i class="sh sh-w" style="--depth:.6"></i>
-      <i class="sh sh-a" style="--depth:.85"><img src="{{ asset('images/image1.jpg') }}" alt="Siswa SAANS"></i>
+      <i class="sh sh-a" style="--depth:.85"><img src="{{ asset('images/hero.jpg') }}" alt="Siswa SAANS"></i>
       <i class="sh sh-o" style="--depth:1.25"></i>
       <i class="sh sh-c" style="--depth:.9"><img src="{{ asset('images/hero3.jpg') }}" alt="Siswa SAANS"></i>
       <i class="sh sh-m" style="--depth:1.4"></i>
@@ -16,7 +16,10 @@
       <i class="sh sh-s1"><b class="flood"></b></i>
     </div>
     <div class="hero-copy">
-      <h1 class="wordmark" style="--len:5">{{ config('glowtide.site.name') }}</h1>
+      <i class="hero-copy-bg" aria-hidden="true"></i>
+      <h1 class="hero-brand">
+        <img src="{{ asset('images/logo.png') }}" alt="{{ config('glowtide.site.name') }}" class="hero-brand-logo">
+      </h1>
       <h2 class="hero-title">
         <span class="hero-tagline-title">Sekolah Alam Anak Saleh</span>
         <span class="hero-tagline-desc">Membentuk generasi berakhlak mulia, berwawasan luas, dan cinta lingkungan.</span>

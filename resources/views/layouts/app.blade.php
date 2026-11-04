@@ -13,6 +13,7 @@
 <link rel="stylesheet" href="{{ asset('css/glowtide.css') }}">
 <link rel="stylesheet" href="{{ asset('css/opener.css') }}">
 <link rel="stylesheet" href="{{ asset('css/cursor.css') }}">
+<link rel="stylesheet" href="{{ asset('css/header-island.css') }}">
 </head>
 <body>
 
@@ -50,5 +51,6 @@
 <script src="{{ asset('js/glowtide.js') }}"></script>
 <script src="{{ asset('js/opener.js') }}"></script>
 <script src="{{ asset('js/cursor.js') }}"></script>
+<script src="{{ asset('js/header-island.js') }}"></script>
 </body>
 </html>

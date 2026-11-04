@@ -11,8 +11,22 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:wght@400..700&family=Hubot+Sans:wdth,wght@75..125,200..900&display=swap">
 <link rel="stylesheet" href="{{ asset('css/glowtide.css') }}">
+<link rel="stylesheet" href="{{ asset('css/opener.css') }}">
 </head>
 <body>
+
+{{-- ===== PAGE OPENER ===== --}}
+<div id="saans-opener" aria-hidden="true">
+  <div class="opener-panel opener-top"></div>
+  <div class="opener-panel opener-bottom">
+    <div class="opener-logo">
+      <span class="opener-wordmark">SAANS</span>
+      <span class="opener-sub">Sekolah Alam Anak Saleh</span>
+    </div>
+  </div>
+</div>
+{{-- ======================= --}}
+
 @include('partials.header')
 
 <main>
@@ -26,5 +40,6 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
 <script src="{{ asset('js/glowtide.js') }}"></script>
+<script src="{{ asset('js/opener.js') }}"></script>
 </body>
 </html>

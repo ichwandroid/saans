@@ -1,6 +1,6 @@
 <header class="site-header">
   <div class="hd-pill">
-    <a class="brand" href="#hero"><img src="{{ asset('images/logo.png') }}" alt="{{ config('glowtide.site.name') }}" class="brand-logo"></a>
+    <a class="brand" href="#hero"><img src="{{ asset('images/header.png') }}" alt="{{ config('glowtide.site.name') }}" class="brand-logo"></a>
     <nav class="hd-nav" aria-label="Main">
       <a class="link" href="#programme">Programme</a>
       <a class="link" href="#artists">Artists</a>

@@ -17,7 +17,10 @@
     </div>
     <div class="hero-copy">
       <h1 class="wordmark" style="--len:5">{{ config('glowtide.site.name') }}</h1>
-      <h2 class="hero-title">Sekolah Alam Anak Saleh</h2>
+      <h2 class="hero-title">
+        <span class="hero-tagline-title">Sekolah Alam Anak Saleh</span>
+        <span class="hero-tagline-desc">Membentuk generasi berakhlak mulia, berwawasan luas, dan cinta lingkungan.</span>
+      </h2>
     </div>
     <div class="hero-plate">
       <p class="hero-dates">SPMB Dibuka</p>

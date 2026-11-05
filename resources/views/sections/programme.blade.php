@@ -1,10 +1,10 @@
 <section id="programme" data-kind="programme" class="programme sec">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="h2" data-split>Five works worth crossing the city for</h2>
+      <h2 class="h2" data-split>Panca Karakter Anak Saleh</h2>
       <div class="sec-side">
-        <p>Twenty-four pieces light the quays this year, from pocket-sized to building-sized. Start with these five, then let the colour pull you along.</p>
-        <a class="link" href="#passes">What each pass opens</a>
+        <p>Lima pilar pembinaan holistik yang diintegrasikan dalam setiap aktivitas belajar mengajar untuk mencetak generasi berprestasi dan beradab.</p>
+        <a class="link" href="#passes">Program Pendidikan Kami</a>
       </div>
     </div>
     <div class="stack">

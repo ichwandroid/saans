@@ -17,13 +17,15 @@
     </div>
     <div class="hero-copy">
       <i class="hero-copy-bg" aria-hidden="true"></i>
-      <h1 class="hero-brand">
-        <img src="{{ asset('images/logo.png') }}" alt="{{ config('glowtide.site.name') }}" class="hero-brand-logo">
-      </h1>
-      <h2 class="hero-title">
-        <span class="hero-tagline-title">Sekolah Alam Anak Saleh</span>
-        <span class="hero-tagline-desc">Membentuk generasi berakhlak mulia, berwawasan luas, dan cinta lingkungan.</span>
-      </h2>
+      <div class="hero-copy-inner">
+        <h1 class="hero-brand">
+          <img src="{{ asset('images/logo.png') }}" alt="{{ config('glowtide.site.name') }}" class="hero-brand-logo">
+        </h1>
+        <h2 class="hero-title">
+          <span class="hero-tagline-title">Sekolah Alam Anak Saleh</span>
+          <span class="hero-tagline-desc">Membentuk generasi berakhlak mulia, berwawasan luas, dan cinta lingkungan.</span>
+        </h2>
+      </div>
     </div>
     <div class="hero-plate">
       <p class="hero-dates">SPMB Dibuka</p>

@@ -13,8 +13,8 @@ return [
     'works' => [
         [
             'tone' => 'sun',
-            'title' => 'Tidal Room',
-            'text' => 'A pavilion of mirrored panels that brightens as the water rises and dims as it falls. Come back an hour later and it is a different room.',
+            'title' => 'Kesalehan Personal',
+            'text' => 'Mengenali diri sendiri dengan baik, menginternalisasi fikir, dzikir, dan amal shalih, menjadi pribadi yang bahagia, penuh cinta kasih hingga mampu transendental kepada ilahi..',
             'meta' => ['Pier 4', 'Every night', 'Free'],
             'img' => 'https://images.unsplash.com/photo-1768141724350-dcf6e26f31a2?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8bGlnaHQlMjBpbnN0YWxsYXRpb258ZW58MXwwfHx8MTc5MDU0NTI5NXww&ixlib=rb-4.1.0&auto=format&fit=crop&w=1200&q=75',
             'w' => '1200',
@@ -23,8 +23,8 @@ return [
         ],
         [
             'tone' => 'sky',
-            'title' => 'Blue Hour',
-            'text' => 'Sixty metres of light and low sound inside a disused customs shed. Walk it slowly: the tunnel answers your footsteps.',
+            'title' => 'Kesalehan Sosial',
+            'text' => 'Jiwa yang bahagia dan tenang dapat menebarkan cinta kasih kepada sesama, menjaga silaturahim, peduli sesama, dan mau berbagi, mampu menempatkan diri di masyarakat, menjunjung tinggi budaya gotong royong dan tolong menolong..',
             'meta' => ['Shed 9', 'Timed entry', 'Night pass'],
             'img' => 'https://images.unsplash.com/photo-1626243049847-7d8ed68a693f?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8N3x8cHJvamVjdGlvbiUyMG1hcHBpbmd8ZW58MXwwfHx8MTc5MDU0NTI5Nnww&ixlib=rb-4.1.0&auto=format&fit=crop&w=1200&q=75',
             'w' => '1200',
@@ -32,9 +32,9 @@ return [
             'alt' => 'People walking through a tunnel of blue and white light',
         ],
         [
-            'tone' => 'rose',
-            'title' => 'Afterimage',
-            'text' => 'Flowers of light bloom across the old grain silo and follow whoever stands closest. Twenty minutes, on the hour.',
+            'tone' => 'moss',
+            'title' => 'Kesalehan Kealamiahan',
+            'text' => 'Manusia bukan hanya pemimpin bagi sesamanya namun juga bagi alam, anak saleh merupakan pribadi yang penuh cinta pada alam sekitar dengan merawat dan melestarikan lingkungan, hewan dan tumbuhan demi keselamatan dan keseimbangan alam..',
             'meta' => ['Silo Square', 'On the hour', 'Free'],
             'img' => 'https://images.unsplash.com/photo-1761473780138-044ed0061bd2?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8NXx8bGlnaHQlMjBpbnN0YWxsYXRpb24lMjBwZW9wbGV8ZW58MXwxfHx8MTc5MDU0NTMwNHww&ixlib=rb-4.1.0&auto=format&fit=crop&w=1200&q=75',
             'w' => '1200',
@@ -42,9 +42,9 @@ return [
             'alt' => 'Two people in silhouette watching a bright floral projection',
         ],
         [
-            'tone' => 'moss',
-            'title' => 'Soft Giants',
-            'text' => 'A herd of lanterns the size of houses grazes along the water\'s edge, breathing light in time with the waves.',
+            'tone' => 'rose',
+            'title' => 'Kesalehan Kebangsaan',
+            'text' => 'Pengabdian diri bukan hanya untuk agama namun juga kepada bangsa, komitmen kebangsaan diasah dalam rangka menanamkan cinta serta bangga terhadap tanah air dan bangsa Indonesia..',
             'meta' => ['East Quay', 'Every night', 'Free'],
             'img' => 'https://images.unsplash.com/photo-1764936509511-abb7366cf56c?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8OHx8Z2xvd2luZyUyMHNjdWxwdHVyZXxlbnwxfDB8fHwxNzkwNTQ1MzAwfDA&ixlib=rb-4.1.0&auto=format&fit=crop&w=1200&q=75',
             'w' => '1200',
@@ -53,8 +53,8 @@ return [
         ],
         [
             'tone' => 'lilac',
-            'title' => 'Firefly Hall',
-            'text' => 'Four thousand small lamps hang from the rope-works ceiling and wake up one by one as people walk beneath them.',
+            'title' => 'Kesalehan Kecendikiaan',
+            'text' => 'Komitmen untuk menjadi cendekiawan muslim yang unggul dalam prestasi dengan akhlak dan agama harus ditanamkan sejak usia dini, melek pengetahuan akan dunia dalam segala aspek ilmu pengetahuan merupakan tujuan dari pendidikan Anak Saleh hingga melahirkan pemimpin-pemimpin cerdas-saleh di masa depan..',
             'meta' => ['Rope Works', 'Timed entry', 'Night pass'],
             'img' => 'https://images.unsplash.com/photo-1718221621618-e477ce33485a?ixid=M3w0Mzc5fDB8MXxzZWFyY2h8MXx8bGlnaHQlMjBpbnN0YWxsYXRpb258ZW58MXwwfHx8MTc5MDU0NTI5NXww&ixlib=rb-4.1.0&auto=format&fit=crop&w=1200&q=75',
             'w' => '1200',

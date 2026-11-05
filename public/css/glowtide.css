@@ -843,6 +843,16 @@ main > * {
     pointer-events: none;
     will-change: opacity, transform;
 }
+.hero-copy-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    transform-origin: center center;
+    will-change: transform;
+}
 .hero-brand {
     margin: 0;
     line-height: 1;
@@ -871,7 +881,7 @@ main > * {
 }
 .hero-title {
     font-family: var(--f-display);
-    margin-top: 10px;
+    margin-top: 4px;
     line-height: 1.45;
     max-width: 520px;
     margin-inline: auto;
@@ -1100,14 +1110,131 @@ main > * {
     background: var(--paper);
     padding-block: clamp(48px, 7vw, 110px) clamp(88px, 11vw, 170px);
 }
+.intro-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.45fr) minmax(280px, 420px);
+    gap: clamp(24px, 4vw, 56px);
+    align-items: center;
+}
+.intro-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.intro-kicker {
+    font-family: var(--f-display);
+    font-weight: 750;
+    font-size: clamp(12px, 1.1vw, 15px);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #135d46;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+}
+.intro-kicker::before {
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 2px;
+    background: #135d46;
+    border-radius: 2px;
+}
 .statement {
-    max-width: 21ch;
-    font-size: clamp(30px, 4.4vw, 70px);
+    max-width: 26ch;
+    font-size: clamp(28px, 3.8vw, 60px);
     font-weight: 760;
     font-stretch: 108%;
-    line-height: 1.04;
+    line-height: 1.08;
     letter-spacing: -0.03em;
     text-wrap: pretty;
+}
+.intro-author {
+    margin-top: clamp(8px, 1.5vw, 16px);
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    padding-left: 18px;
+    border-left: 3px solid #135d46;
+}
+.author-name {
+    font-family: var(--f-display);
+    font-weight: 800;
+    font-size: clamp(20px, 2.1vw, 25px);
+    letter-spacing: -0.02em;
+    color: #1a2a22;
+    margin: 0;
+}
+.author-role {
+    font-size: clamp(13px, 1.15vw, 15px);
+    font-weight: 600;
+    color: #135d46;
+    letter-spacing: 0.01em;
+    margin: 0;
+}
+.intro-figure {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.figure-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 720px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.figure-img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    object-fit: contain;
+    object-position: bottom center;
+    position: relative;
+    z-index: 1;
+    filter: drop-shadow(0 14px 28px rgba(6, 40, 29, 0.08));
+    -webkit-mask-image: 
+        linear-gradient(to right, transparent 0%, black 16%),
+        linear-gradient(to top, transparent 0%, black 18%);
+    -webkit-mask-composite: source-in;
+    mask-image: 
+        linear-gradient(to right, transparent 0%, black 16%),
+        linear-gradient(to top, transparent 0%, black 18%);
+    mask-composite: intersect;
+}
+/* Gradasi pemisah senada dengan background utama (--paper) */
+.figure-gradient-sep {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+    background:
+        /* Gradasi pemisah di sisi kiri (antara teks dan foto) */
+        linear-gradient(90deg, var(--paper) 0%, rgba(255, 244, 234, 0.75) 15%, transparent 40%),
+        /* Gradasi pemisah di bagian bawah foto agar menyatu lembut ke latar */
+        linear-gradient(0deg, var(--paper) 0%, rgba(255, 244, 234, 0.8) 12%, transparent 32%);
+}
+@media (max-width: 900px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+    .figure-wrap {
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    .figure-gradient-sep {
+        background:
+            linear-gradient(180deg, var(--paper) 0%, rgba(255, 244, 234, 0.6) 12%, transparent 30%),
+            linear-gradient(0deg, var(--paper) 0%, rgba(255, 244, 234, 0.8) 14%, transparent 35%);
+    }
+    .figure-img {
+        -webkit-mask-image: linear-gradient(to top, transparent 0%, black 18%);
+        mask-image: linear-gradient(to top, transparent 0%, black 18%);
+    }
 }
 .facts {
     list-style: none;

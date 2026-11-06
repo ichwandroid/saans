@@ -1,10 +1,10 @@
 <section id="artists" data-kind="team" class="artists sec">
   <div class="wrap">
     <div class="sec-head">
-      <h2 class="h2" data-split>Twenty-four artists. Six to meet first.</h2>
+      <h2 class="h2" data-split>Pendidik berdedikasi, pembentuk generasi saleh.</h2>
       <div class="sec-side">
-        <p>Sculptors, composers, coders and one retired lighthouse keeper. Most of them are out on the quays every night, so say hello.</p>
-        <a class="link" href="#programme">See their works</a>
+        <p>Guru-guru kami adalah pendidik profesional yang mencintai anak dan alam. Mereka hadir setiap hari dengan semangat membimbing, mendidik, dan menginspirasi.</p>
+        <a class="link" href="#programme">Lihat program kami</a>
       </div>
     </div>
     <ul class="people">

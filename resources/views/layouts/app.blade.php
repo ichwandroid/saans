@@ -49,6 +49,7 @@
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js"></script>
 <script src="{{ asset('js/glowtide.js') }}"></script>
+<script src="{{ asset('js/place-slider.js') }}"></script>
 <script src="{{ asset('js/opener.js') }}"></script>
 <script src="{{ asset('js/cursor.js') }}"></script>
 <script src="{{ asset('js/header-island.js') }}"></script>

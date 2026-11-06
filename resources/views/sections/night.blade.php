@@ -1,9 +1,9 @@
 <section id="night" data-kind="timeline" class="night sec">
   <div class="wrap night-grid">
     <div class="night-head">
-      <h2 class="h2" data-split>One night, from dusk to midnight</h2>
-      <p>Every evening follows the same tide of light. Come early for the switch-on, stay late for the quiet.</p>
-      <a class="btn" href="#passes">Plan your night</a>
+      <h2 class="h2" data-split>Sekolah Alam Anak Saleh dalam Angka</h2>
+      <p>Perjalanan panjang membangun generasi saleh, cerdas, dan mencintai alam. Angka-angka ini adalah bukti nyata dari kepercayaan ribuan keluarga.</p>
+      <a class="btn" href="#visit">Daftar sekarang</a>
     </div>
     <div class="steps-line">
       <ol class="steps">

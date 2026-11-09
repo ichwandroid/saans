@@ -1,8 +1,8 @@
 <section id="voices" data-kind="reviews" class="voices sec">
   <div class="wrap sec-head">
-    <h2 class="h2" data-split>Heard on the quays last year</h2>
+    <h2 class="h2" data-split>Apa Kata Mereka Tentang Kami</h2>
     <div class="sec-side">
-      <p>We asked people on their way home what stayed with them. A few of the answers changed this year's programme.</p>
+      <p>Kisah nyata dan pengalaman berharga dari orang tua siswa serta alumni yang telah tumbuh bersama keluarga besar Sekolah Alam Anak Saleh.</p>
     </div>
   </div>
   <div class="v-row">

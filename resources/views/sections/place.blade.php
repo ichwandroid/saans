@@ -35,8 +35,8 @@ $placeSlides = [
     <div class="sec-head">
       <h2 class="h2" data-split>Program Pendidikan Kami</h2>
       <div class="sec-side">
-        <p>Jenjang pendidikan yang berkesinambungan untuk mengawal tumbuh kembang ananda tercinta di Sekolah Anak Saleh..</p>
-        <a class="link" href="#visit">How to get there</a>
+        <p>Jenjang pendidikan yang berkesinambungan untuk mengawal tumbuh kembang ananda tercinta di Sekolah Anak Saleh.</p>
+        <a class="link" href="#visit">Lokasi & rute kunjungan</a>
       </div>
     </div>
     <div class="ripple" data-ripple-slider>

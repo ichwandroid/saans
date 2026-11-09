@@ -10,7 +10,7 @@
     <ul class="people">
       @foreach (config('glowtide.people') as $person)
         <li class="person tone-{{ $person['tone'] }}">
-          <div class="person-art"><i class="person-halo" data-parallax="0.16" aria-hidden="true"></i><figure class="person-frame"><img src="{{ $person['img'] }}" width="{{ $person['w'] }}" height="{{ $person['h'] }}" loading="lazy" alt="{{ $person['alt'] }}"></figure></div>
+          <div class="person-art"><i class="person-halo" data-parallax="0.16" aria-hidden="true"></i><figure class="person-frame"><img src="{{ str_starts_with($person['img'], 'http://') || str_starts_with($person['img'], 'https://') ? $person['img'] : asset(ltrim(str_replace('public/', '', $person['img']), '/')) }}" width="{{ $person['w'] }}" height="{{ $person['h'] }}" loading="lazy" alt="{{ $person['alt'] }}"></figure></div>
           <h3 class="person-name">{{ $person['name'] }}</h3>
           <p class="person-role">{{ $person['role'] }}</p>
         </li>

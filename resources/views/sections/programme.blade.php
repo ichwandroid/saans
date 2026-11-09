@@ -15,7 +15,7 @@
             <p class="work-text">{{ $work['text'] }}</p>
             <p class="work-meta">@foreach ($work['meta'] as $m)<span>{{ $m }}</span>@endforeach</p>
           </div>
-          <figure class="work-media"><img src="{{ $work['img'] }}" width="{{ $work['w'] }}" height="{{ $work['h'] }}" loading="lazy" alt="{{ $work['alt'] }}"></figure>
+          <figure class="work-media"><img src="{{ str_starts_with($work['img'], 'http://') || str_starts_with($work['img'], 'https://') ? $work['img'] : asset(ltrim(str_replace('public/', '', $work['img']), '/')) }}" width="{{ $work['w'] }}" height="{{ $work['h'] }}" loading="lazy" alt="{{ $work['alt'] }}"></figure>
         </article>
       @endforeach
     </div>

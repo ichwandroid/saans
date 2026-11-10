@@ -59,7 +59,7 @@
                 <span class="text-xs font-medium text-zinc-400">Bisa ditambah/dikurangi bebas</span>
             </div>
 
-            <div id="nav-container" class="space-y-3">
+            <div id="nav-container" class="space-y-3" data-count="{{ count($navbar['links'] ?? []) }}">
                 @php
                     $links = $navbar['links'] ?? [];
                 @endphp
@@ -78,7 +78,7 @@
                                 <input type="text" name="links[{{ $index }}][label]" value="{{ $link['label'] ?? '' }}" placeholder="Label Menu (contoh: Program)" required class="w-full rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm text-zinc-900 shadow-2xs focus:border-zinc-950 focus:outline-hidden focus:ring-1 focus:ring-zinc-950">
                             </div>
                             <div>
-                                <input type="text" name="links[{{ $index }}][href]" value="{{ $link['href'] ?? '' }}" placeholder="Tautan (contoh: #programme)" required class="w-full rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-sm text-zinc-900 shadow-2xs focus:border-zinc-950 focus:outline-hidden focus:ring-1 focus:ring-zinc-950 font-mono text-xs">
+                                <input type="text" name="links[{{ $index }}][href]" value="{{ $link['href'] ?? '' }}" placeholder="Tautan (contoh: #programme)" required class="w-full rounded-lg border border-zinc-200 bg-white px-3 py-1.5 text-xs font-mono text-zinc-900 shadow-2xs focus:border-zinc-950 focus:outline-hidden focus:ring-1 focus:ring-zinc-950">
                             </div>
                         </div>
 
@@ -110,7 +110,7 @@
 
 @push('scripts')
 <script>
-    let navIndex = {{ count($navbar['links'] ?? []) }};
+    let navIndex = parseInt(document.getElementById('nav-container').dataset.count, 10);
 
     function renumberRows() {
         const rows = document.querySelectorAll('.nav-item-row');

@@ -25,6 +25,7 @@ return [
         'tagline_desc' => 'Membentuk generasi berakhlak mulia, berwawasan luas, dan cinta lingkungan.',
         'badge_text' => 'SPMB Dibuka',
         'lead_text' => 'Segera daftarkan diri untuk tahun ajaran baru bersama SAANS.',
+        'hero_plate_active' => true,
         'cta_primary_text' => 'Daftar Sekarang',
         'cta_primary_href' => '#passes',
         'cta_secondary_text' => 'Lihat Program',

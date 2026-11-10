@@ -33,6 +33,7 @@
         </h2>
       </div>
     </div>
+    @if(config('glowtide.hero.hero_plate_active', true))
     <div class="hero-plate">
       <p class="hero-dates">{{ config('glowtide.hero.badge_text', 'SPMB Dibuka') }}</p>
       <p class="hero-lead">{{ config('glowtide.hero.lead_text', 'Segera daftarkan diri untuk tahun ajaran baru bersama SAANS.') }}</p>
@@ -41,6 +42,7 @@
         <a class="link" href="{{ config('glowtide.hero.cta_secondary_href', '#programme') }}">{{ config('glowtide.hero.cta_secondary_text', 'Lihat Program') }}</a>
       </div>
     </div>
+    @endif
     <i class="hero-fade" aria-hidden="true"></i>
   </div>
 </section>
